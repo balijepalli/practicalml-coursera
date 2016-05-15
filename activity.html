@@ -132,9 +132,14 @@ $(document).ready(function () {
 <h1>Data</h1>
 <p>The training data for this project are available here: <a href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv" class="uri">https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv</a></p>
 <p>The test data are available here: <a href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv" class="uri">https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv</a></p>
-<pre class="r"><code>library(RCurl)</code></pre>
-<pre><code>## Loading required package: bitops</code></pre>
-<pre class="r"><code>training_url &lt;- &quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv&quot;
+<pre class="r"><code>library(RCurl)
+library(ElemStatLearn)
+library(rpart)
+library(stringr)
+library(lubridate)
+library(e1071)
+
+training_url &lt;- &quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv&quot;
 test_url &lt;- &quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv&quot;
 training_data &lt;- read.csv(text=getURL(training_url), na.strings=c(&quot;&quot;, &quot;NA&quot;))
 test_data &lt;- read.csv(text=getURL(test_url), na.strings=c(&quot;&quot;, &quot;NA&quot;))</code></pre>

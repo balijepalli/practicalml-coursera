@@ -1,9 +1,9 @@
 ---
 title: "Are you exercising correctly? Qualitative assessment of weight lifting exercises"
 output:
-  pdf_document: activity
   html_document:
     smart: no
+  pdf_document: activity
 bibliography: bibliography.bib
 ---
 
@@ -39,8 +39,15 @@ https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv
 The test data are available here: 
 https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv
 
+
 ```{r cache=TRUE}
 library(RCurl)
+library(ElemStatLearn)
+library(rpart)
+library(stringr)
+library(lubridate)
+library(e1071)
+
 training_url <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
 test_url <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
 training_data <- read.csv(text=getURL(training_url), na.strings=c("", "NA"))

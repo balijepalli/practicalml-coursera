@@ -1,0 +1,12 @@
+base
+bitops
+RCurl
+lattice
+ggplot2
+caret
+randomForest
+ElemStatLearn
+rpart
+stringr
+lubridate
+e1071
